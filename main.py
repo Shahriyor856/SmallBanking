@@ -4,19 +4,21 @@ def show_balance(balance):
 
     print("***********************")
     print(f"The current balance is ${balance:.2f}")
-    print("***********************")
+    # print("***********************")
 
 
 def deposit():
     amount = float(
         input("Enter the amount:"))
-    print("***********************")
+    # print("***********************")
     if amount <= 0:
         print("***********************")
         print("You cannot deposit a negative amount or zero.")
         print("***********************")
         return 0
     else:
+        print("***********************")
+        print(f"${amount:.2f} was deposited successfully.")
         return amount
 
 
@@ -24,7 +26,7 @@ def withdraw(balance):
     print("***********************")
     amount = float(
         input("Enter the amount:"))
-    print("***********************")
+    # print("***********************")
 
     if amount > balance:
         print("***********************")
@@ -35,16 +37,18 @@ def withdraw(balance):
     elif amount <= 0:
         print("***********************")
         print("Amount must be greater than 0.")
-        print("***********************")
+        # print("***********************")
         return 0
     else:
+        print("***********************")
+        print(f"${amount:.2f} was withdrawn successfully.")
         return amount
 
 
 def history(transactions):
     print("***********************")
     print("Transaction History:")
-    print("***********************")
+    # print("***********************")
 
     if not transactions:
 
@@ -85,7 +89,6 @@ def main():
         elif choice == "3":
             amount = withdraw(balance)
             if amount > 0:
-
                 balance -= amount
                 transaction_history.append(("Withdrew", amount))
         elif choice == "4":
